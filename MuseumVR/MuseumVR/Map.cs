@@ -34,14 +34,11 @@ namespace MuseumVR
         {
             try
             {
-                var dirs = Directory.GetDirectories(sDir);
-                Array.Sort(dirs);
-                foreach (string d in dirs)
+                foreach (string d in Directory.GetDirectories(sDir))
                 {
                     Item new_dir = new Item(d, parent);
-                    var files = Directory.GetFiles(d);
-                    Array.Sort(files);
-                    foreach (string f in files)
+
+                    foreach (string f in Directory.GetFiles(d))
                     {
                         new_dir.AddItem(new Item(f, new_dir));
                         //Console.WriteLine(f);
