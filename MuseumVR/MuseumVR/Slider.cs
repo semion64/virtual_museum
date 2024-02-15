@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MuseumVR
 {
     internal class EndSlideException : Exception { 
     
     }
+
     internal class Slider
     {
         Item item;
