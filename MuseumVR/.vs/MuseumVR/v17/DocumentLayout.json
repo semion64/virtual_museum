@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\navigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\navigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\drawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\drawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\users\\kege\\downloads\\01_museumvr\\museumvr\\museumvr\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.Designer.cs",
+              "RelativeToolTip": "MuseumVR\\Form1.Designer.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAkwB4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T08:18:42.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Drawer.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Drawer.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Drawer.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Drawer.cs",
+              "RelativeToolTip": "MuseumVR\\Drawer.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T05:36:59.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Slider.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Slider.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Slider.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Slider.cs",
+              "RelativeToolTip": "MuseumVR\\Slider.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAcwB4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T05:03:39.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Map.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Map.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Map.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Map.cs",
+              "RelativeToolTip": "MuseumVR\\Map.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAuwA8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T04:47:55.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Navigator.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Navigator.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Navigator.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Navigator.cs",
+              "RelativeToolTip": "MuseumVR\\Navigator.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAAwGgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T04:47:55.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Item.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Item.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Item.cs",
+              "RelativeToolTip": "MuseumVR\\Item.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAArwHcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T04:47:55.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Form1.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.cs",
+              "RelativeToolTip": "MuseumVR\\Form1.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAQwBYAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T04:47:55.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.cs",
+              "RelativeDocumentMoniker": "MuseumVR\\Form1.cs",
+              "ToolTip": "C:\\Users\\kege\\Downloads\\01_MuseumVR\\MuseumVR\\MuseumVR\\Form1.cs [Design]",
+              "RelativeToolTip": "MuseumVR\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-14T04:47:55.532Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
