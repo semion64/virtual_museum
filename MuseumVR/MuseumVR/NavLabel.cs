@@ -16,7 +16,7 @@ namespace MuseumVR
             lbl_nav = new Label();
             lbl_nav.Width = 1700;
             lbl_nav.Height = 75;
-            lbl_nav.Font = new Font("Gabriola", 28, FontStyle.Italic);
+            lbl_nav.Font = new Font(SETTINGS.FONT_FAMILY, SETTINGS.FONT_SIZE, (FontStyle)(SETTINGS.FONT_STYLE));
             lbl_nav.BackColor = Color.Transparent;
         }
 

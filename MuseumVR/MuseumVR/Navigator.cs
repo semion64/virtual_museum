@@ -33,7 +33,8 @@ namespace MuseumVR
             initControls();
             UpdateCoord();
 
-            drawer = new Drawer(menu.MainPanel);
+            drawer = SETTINGS.ANIMATION_TIME > 0 ? new DrawerAnimated(menu.MainPanel) : new DrawerSimple(menu.MainPanel);
+
         }
 
         public void Update()

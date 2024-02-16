@@ -13,7 +13,6 @@ namespace MuseumVR
     internal class Waitning
     {
         Panel pnl;
-        bool active = false;
         Timer tmr;
         int tick = 0;
         int limit;
@@ -51,7 +50,6 @@ namespace MuseumVR
         private void stop()
         {
             tick = 0;
-            active = false;
             pnl.Visible = false;
             tmr.Enabled = false;
            
@@ -64,33 +62,25 @@ namespace MuseumVR
         DrawFunc drawFunc;
         public bool Start(DrawFunc drawFunc = null)
         {
-            //if (active)
-           // {
-             //   return false;
-           // }
-
             this.drawFunc = drawFunc;
 
-            active = true;
             tmr.Enabled = true;
             pnl.Visible = true;
 
             return true;
         }
     }
+    
 
-    internal class Drawer
+    internal abstract class Drawer
     {
-        bool WAIT_ANIMATION = true;
-        Panel pnl;
-        Panel panelContent;
+        protected bool WAIT_ANIMATION = true;
+        protected Panel pnl;
         //AxWMPLib.AxWindowsMediaPlayer video_player;
-        Waitning waitning;
+        protected Waitning waitning;
         public Drawer(Panel pnl) {
             this.pnl = pnl;
             waitning = new Waitning(pnl);
-            panelContent = new Panel();
-            panelContent.Dock = DockStyle.Fill;
             /*  video_player = new AxWMPLib.AxWindowsMediaPlayer();
 
              // System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -108,7 +98,7 @@ namespace MuseumVR
 
         }
 
-        public void DrawSlide(Item item) {
+        public virtual void DrawSlide(Item item) {
             string ext = Path.GetExtension(item.Path);
             if (ext.ToUpper() == ".JPG" 
                 || ext.ToUpper() == ".JPEG" 
@@ -118,18 +108,7 @@ namespace MuseumVR
                 || ext.ToUpper() == ".BMP"
                 || ext.ToUpper() == ".GIF")
             {
-                if (WAIT_ANIMATION)
-                {
-                    this.pnl.Controls.Add(waitning.Panel);
-                    waitning.Start();
-                    drawImage(new Bitmap(item.Path));
-                    panelContent.Visible = true;
-                }
-                else 
-                {
-                    drawImage(new Bitmap(item.Path));
-                }
-               
+                drawImage(new Bitmap(item.Path));
             }
             else if (ext.ToUpper() == ".MPG" 
                 || ext.ToUpper() == ".AVI" 
@@ -143,13 +122,6 @@ namespace MuseumVR
                 || ext.ToUpper() == ".WMA") 
             {
                 drawVideo(item.Path);
-            }
-            if (WAIT_ANIMATION == false)
-            {
-                 if (pnl.Controls.Count > 1)
-                 {
-                    pnl.Controls.Remove(pnl.Controls[0]);
-                 }
             }
             return;
         }
@@ -166,29 +138,58 @@ namespace MuseumVR
             video_player.URL = path;*/
         }
 
-        private void drawImage(Bitmap bit)
+        abstract protected void drawImage(Bitmap bit);
+    }
+
+    internal class DrawerSimple : Drawer
+    {
+        public DrawerSimple(Panel pnl) : base(pnl)
         {
-            if (WAIT_ANIMATION)
+        }
+
+        protected override void drawImage(Bitmap bit)
+        {
+            PictureBox pbx = new PictureBox();
+            pbx.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbx.Dock = DockStyle.Fill;
+            pbx.Image = bit;
+            pnl.Controls.Add((PictureBox)pbx);
+        }
+
+        public override void DrawSlide(Item item) {
+            base.DrawSlide(item);
+            if (pnl.Controls.Count > 1)
             {
-                panelContent.Visible = false;
-                StopPlayer();
-                PictureBox pbx = new PictureBox();
-                pbx.Visible = true;
-                pbx.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbx.Dock = DockStyle.Fill;
-                pbx.Image = bit;
-                panelContent.Controls.Clear();
-                panelContent.Controls.Add(pbx);
-                pnl.Controls.Add(panelContent);
+                pnl.Controls.Remove(pnl.Controls[0]);
             }
-            else
-            {
-                PictureBox pbx = new PictureBox();
-                pbx.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbx.Dock = DockStyle.Fill;
-                pbx.Image = bit;
-                pnl.Controls.Add((PictureBox)pbx);
-            }
+        }
+    }
+
+    internal class DrawerAnimated : Drawer
+    {
+
+        protected Panel panelContent;
+        public DrawerAnimated(Panel pnl) : base(pnl)
+        {
+            panelContent = new Panel();
+            panelContent.Dock = DockStyle.Fill;
+        }
+
+        protected override void drawImage(Bitmap bit)
+        {
+            this.pnl.Controls.Add(waitning.Panel);
+            waitning.Start();
+            panelContent.Visible = false;
+            StopPlayer();
+            PictureBox pbx = new PictureBox();
+            pbx.Visible = true;
+            pbx.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbx.Dock = DockStyle.Fill;
+            pbx.Image = bit;
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(pbx);
+            pnl.Controls.Add(panelContent);
+            panelContent.Visible = true;
         }
     }
 }

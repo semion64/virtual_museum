@@ -18,7 +18,7 @@ namespace MuseumVR
         {
             InitializeComponent();
             pnlMain.BackgroundImage = new Bitmap("pic/main.png");
-            mapper = new Map("Data");
+            mapper = new Map(SETTINGS.MUSEUM_DIR);
             navigator = new Navigator(mapper.GetItem(), pnlMain, pnlTop, pnlBottom);
         }
 

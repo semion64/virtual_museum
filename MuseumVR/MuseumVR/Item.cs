@@ -55,6 +55,7 @@ namespace MuseumVR
         {
             get 
             {
+                var s = this.Name.Replace(SETTINGS.MUSEUM_DIR, "");
                 return strip(this.Name);   
             }
         }
@@ -133,7 +134,12 @@ namespace MuseumVR
         }
         public static string GetNavigationString(Item item)
         {
-            string path = item.Path;
+            if (item.Path.Length <= 0) {
+                return "";
+            }
+
+            string path = item.Path.Replace(SETTINGS.MUSEUM_DIR, "");
+           
             if (path.IndexOf('\\') > 0)
             {
                 path = path.Substring(path.IndexOf('\\') + 1);
@@ -146,7 +152,12 @@ namespace MuseumVR
                 res += strip(s) + " / ";
             }
 
-            res = res.Substring(0, res.Length - 3);
+            res = res.Substring(0, res.Length - 3).Trim();
+          
+            if (res[0] == '/')
+            {
+                res = res.Substring(1);
+            }
             return res;
         }
     }
