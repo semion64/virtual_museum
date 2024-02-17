@@ -136,7 +136,7 @@ namespace MuseumVR
         }
 
         private void initControls() {
-            template_top.BackgroundImage = new Bitmap("pic/top_panel.png");
+            template_top.BackgroundImage = Resources.Image(Resources.Pic.TopPanel);
 
             this.menu = new Menu();
             menu.SetButtonClickProc(Menu.Buttons.Next, btn_Click_Next);

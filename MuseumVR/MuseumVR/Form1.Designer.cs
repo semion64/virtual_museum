@@ -46,6 +46,7 @@
             tableLayoutPanel1.Controls.Add(pnlTop, 0, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
@@ -59,18 +60,20 @@
             // 
             pnlBottom.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
             pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnlBottom.Location = new System.Drawing.Point(3, 967);
+            pnlBottom.Location = new System.Drawing.Point(0, 964);
+            pnlBottom.Margin = new System.Windows.Forms.Padding(0);
             pnlBottom.Name = "pnlBottom";
-            pnlBottom.Size = new System.Drawing.Size(1402, 58);
+            pnlBottom.Size = new System.Drawing.Size(1408, 64);
             pnlBottom.TabIndex = 0;
             // 
             // pnlMain
             // 
             pnlMain.BackColor = System.Drawing.Color.White;
             pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnlMain.Location = new System.Drawing.Point(3, 67);
+            pnlMain.Location = new System.Drawing.Point(0, 64);
+            pnlMain.Margin = new System.Windows.Forms.Padding(0);
             pnlMain.Name = "pnlMain";
-            pnlMain.Size = new System.Drawing.Size(1402, 894);
+            pnlMain.Size = new System.Drawing.Size(1408, 900);
             pnlMain.TabIndex = 1;
             // 
             // pnlTop
@@ -78,9 +81,10 @@
             pnlTop.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
             pnlTop.Controls.Add(button1);
             pnlTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnlTop.Location = new System.Drawing.Point(3, 3);
+            pnlTop.Location = new System.Drawing.Point(0, 0);
+            pnlTop.Margin = new System.Windows.Forms.Padding(0);
             pnlTop.Name = "pnlTop";
-            pnlTop.Size = new System.Drawing.Size(1402, 58);
+            pnlTop.Size = new System.Drawing.Size(1408, 64);
             pnlTop.TabIndex = 2;
             // 
             // button1
@@ -100,7 +104,7 @@
             ClientSize = new System.Drawing.Size(1408, 523);
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Name = "Form1";
             ShowIcon = false;
             Text = "Form1";

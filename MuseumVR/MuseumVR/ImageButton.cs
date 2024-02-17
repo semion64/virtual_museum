@@ -10,21 +10,22 @@ namespace MuseumVR
 {
     internal static class ImageButton
     {
-        static Dictionary<string, Bitmap> btn_bitmap = new Dictionary<string, Bitmap>();
+        //static Dictionary<string, Bitmap> btn_bitmap = new Dictionary<string, Bitmap>();
         static bool isInitialized = false;
         static ImageButton()
         {
-            btn_bitmap["menu"] = new Bitmap("pic/btn_menu.png");
-            btn_bitmap["menu-hover"] = new Bitmap("pic/btn_menu_hover.png");
-            btn_bitmap["prev"] = new Bitmap("pic/prev.png");
-            btn_bitmap["prev-hover"] = new Bitmap("pic/prev_hover.png");
-            btn_bitmap["next"] = new Bitmap("pic/next.png");
-            btn_bitmap["next-hover"] = new Bitmap("pic/next_hover.png");
-            btn_bitmap["back"] = new Bitmap("pic/back.png");
-            btn_bitmap["back-hover"] = new Bitmap("pic/back_hover.png");
+           /* btn_bitmap["menu"] = Resources.Image(Resources.Pic.BtnMenu);
+            btn_bitmap["menu-hover"] = Resources.Image(Resources.Pic.BtnMenuHover);
+            btn_bitmap["prev"] = Resources.Image(Resources.Pic.BtnPrev);
+            btn_bitmap["prev-hover"] = Resources.Image(Resources.Pic.BtnPrevHover);
+            btn_bitmap["next"] = Resources.Image(Resources.Pic.BtnNext);
+            btn_bitmap["next-hover"] = Resources.Image(Resources.Pic.BtnNextHover);
+            btn_bitmap["back"] = Resources.Image(Resources.Pic.BtnBack);
+            btn_bitmap["back-hover"] = Resources.Image(Resources.Pic.BtnBackHover);*/
             isInitialized = true;
         }
-        static public  Button Create(string img_name, int left, int top, DockStyle dockStyle = DockStyle.None)
+
+        static public  Button Create(Resources.Pic btn_name, int left, int top, DockStyle dockStyle = DockStyle.None)
         {
             Button btn = new Button();
             btn.Visible = false;
@@ -32,28 +33,28 @@ namespace MuseumVR
             btn.Top = top;
             btn.Dock = dockStyle;
 
-            btn.BackgroundImage = btn_bitmap[img_name];
+            btn.BackgroundImage = Resources.Image(btn_name);
             btn.BackColor = Color.Transparent;
-            btn.Size = btn_bitmap[img_name].Size;
+            btn.Size = Resources.Image(btn_name).Size;
             btn.FlatAppearance.BorderSize = 0;
             btn.FlatStyle = FlatStyle.Flat;
             btn.UseVisualStyleBackColor = false;
             btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btn.MouseDown += (sender, EventArgs) => { btn_MouseDown(sender, EventArgs, img_name); };
-            btn.MouseUp += (sender, EventArgs) => { btn_MouseUp(sender, EventArgs, img_name); };
+            btn.MouseDown += (sender, EventArgs) => { btn_MouseDown(sender, EventArgs, btn_name); };
+            btn.MouseUp += (sender, EventArgs) => { btn_MouseUp(sender, EventArgs, btn_name); };
             btn.Font = new Font(SETTINGS.FONT_FAMILY, SETTINGS.FONT_SIZE, (FontStyle)SETTINGS.FONT_STYLE); 
             
             return btn;
         }
 
-        static private void btn_MouseDown(object sender, MouseEventArgs eventArgs, string img_name)
+        static private void btn_MouseDown(object sender, MouseEventArgs eventArgs, Resources.Pic btn_name)
         {
-            ((Button)sender).BackgroundImage = btn_bitmap[img_name + "-hover"];
+            ((Button)sender).BackgroundImage = Resources.Image((Resources.Pic) Enum.Parse(typeof(Resources.Pic), $"{btn_name.ToString()}Hover", true));
         }
-        static private void btn_MouseUp(object sender, MouseEventArgs eventArgs, string img_name)
+        static private void btn_MouseUp(object sender, MouseEventArgs eventArgs, Resources.Pic btn_name)
         {
-            ((Button)sender).BackgroundImage = btn_bitmap[img_name];
+            ((Button)sender).BackgroundImage = Resources.Image(btn_name);
         }
     }
 }

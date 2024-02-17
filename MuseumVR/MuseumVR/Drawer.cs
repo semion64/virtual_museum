@@ -23,7 +23,7 @@ namespace MuseumVR
             pnl.BackColor = Color.White;
 
             PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = new Bitmap("pic/wait.gif");
+            pictureBox.Image = Resources.Image(Resources.Pic.WaitAnim);
             pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox.Left = pnl_main.Width / 2 - pictureBox.Width / 2;
             pictureBox.Top = pnl_main.Height / 2 - pictureBox.Height / 2;

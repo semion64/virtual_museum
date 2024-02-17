@@ -37,13 +37,13 @@ namespace MuseumVR
             pnl_main.Padding = new Padding(8);
 
             pnl_bottom = new Panel();
-            pnl_bottom.BackgroundImage = new Bitmap("pic/bottom_panel.png");
+            pnl_bottom.BackgroundImage = Resources.Image(Resources.Pic.BottomPanel);    
             pnl_bottom.Dock = DockStyle.Fill;
             btns = new Dictionary<Buttons, Button>();
 
-            btns[Buttons.Back] = ImageButton.Create("back", 0, 0, DockStyle.None);
-            btns[Buttons.Next] = ImageButton.Create("next", 0, 0);
-            btns[Buttons.Prev] = ImageButton.Create("prev", 0, 0);
+            btns[Buttons.Back] = ImageButton.Create(Resources.Pic.BtnBack, 0, 0);
+            btns[Buttons.Next] = ImageButton.Create(Resources.Pic.BtnNext, 0, 0);
+            btns[Buttons.Prev] = ImageButton.Create(Resources.Pic.BtnPrev, 0, 0);
          
             pnl_bottom.Controls.Add(btns[Buttons.Back]);
         }
@@ -85,7 +85,7 @@ namespace MuseumVR
             int top = 8;
             for (int i = 0; i < item.CountChilds; ++i)
             {
-                Button btn = ImageButton.Create("menu", 8, top, DockStyle.None);
+                Button btn = ImageButton.Create(Resources.Pic.BtnMenu, 8, top, DockStyle.None);
                 btn.Text = item[i].StripName;
                 Item it = item[i];
                 btn.Click += (sender, EventArgs) => { btn_click(sender, EventArgs, it); };
