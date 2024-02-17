@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MuseumVR
 {
@@ -14,9 +17,16 @@ namespace MuseumVR
 
         private static string museum_dir = "Data";
         private static int animation_time = 10;
-        private static string font_family = "Gabriola";
-        private static int font_style = 2;
-        private static int font_size = 28;
+        private static string nav_font_family = "Gabriola";
+        private static int nav_font_style = 2;
+        private static int nav_font_size = 28;
+        private static string nav_font_color = "#000000";
+
+        private static string btn_font_family = "Gabriola";
+        private static int btn_font_style = 2;
+        private static int btn_font_size = 28;
+        private static string btn_font_color = "#000000";
+
         private static string full_screen = "ON";
         public static int ANIMATION_TIME
         {
@@ -26,27 +36,68 @@ namespace MuseumVR
             }
         }
 
-        public static string FONT_FAMILY
+        public static string NAV_FONT_FAMILY
         {
             get
             {
-                return font_family;
+                return nav_font_family;
             }
         }
 
-        public static int FONT_STYLE
+        public static int NAV_FONT_STYLE
         {
             get
             {
-                return font_style;
+                return nav_font_style;
             }
         }
 
-        public static int FONT_SIZE
+        public static int NAV_FONT_SIZE
         {
             get
             {
-                return font_size;
+                return nav_font_size;
+            }
+        }
+
+        public static Color NAV_FONT_COLOR
+        {
+            get
+            {
+                return Color.FromArgb(Int32.Parse(nav_font_color.Replace("#", ""), NumberStyles.HexNumber));
+            }
+        }
+
+
+        public static string BTN_FONT_FAMILY
+        {
+            get
+            {
+                return btn_font_family;
+            }
+        }
+
+        public static int BTN_FONT_STYLE
+        {
+            get
+            {
+                return btn_font_style;
+            }
+        }
+
+        public static int BTN_FONT_SIZE
+        {
+            get
+            {
+                return btn_font_size;
+            }
+        }
+
+        public static Color BTN_FONT_COLOR
+        {
+            get
+            {
+                return Color.FromArgb(Int32.Parse(btn_font_color.Replace("#", ""), NumberStyles.HexNumber));
             }
         }
 
@@ -74,9 +125,10 @@ namespace MuseumVR
                     
                     sw.WriteLine($"MUSEUM_DIR = {museum_dir}");
                     sw.WriteLine($"ANIMATION_TIME = {animation_time}");
-                    sw.WriteLine($"FONT_FAMILY = {font_family}");
-                    sw.WriteLine($"FONT_STYLE = {font_style}");
-                    sw.WriteLine($"FONT_SIZE = {font_size}");
+
+                    sw.WriteLine($"NAV_LABEL_FONT = \"{nav_font_family}\" {nav_font_size} {nav_font_style} {nav_font_color}");
+                    sw.WriteLine($"BUTTONS_FONT = \"{btn_font_family}\" {btn_font_size} {btn_font_style} {btn_font_color}");
+
                     sw.WriteLine($"FULL_SCREEN = {full_screen}");
                 }
             }
@@ -112,57 +164,72 @@ namespace MuseumVR
                             int time = Convert.ToInt32(arr[1].Trim());
                             if (time < 0 || time > 100)
                             {
-                                System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение ANIMATION_TIME  должно быть от 0 до 100");
+                                MessageBox.Show("Ошибка в файле setting.txt. Значение ANIMATION_TIME  должно быть от 0 до 100");
                                 continue;
                             }
                             animation_time = Convert.ToInt32(arr[1].Trim());
                         }
                         catch (Exception)
                         {
-                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение ANIMATION_TIME  должно быть от 0 до 100");
+                            MessageBox.Show("Ошибка в файле setting.txt. Значение ANIMATION_TIME  должно быть от 0 до 100");
                         }
                     }
-                    else if (arr[0].Trim().ToUpper() == "FONT_FAMILY")
+                    else if (arr[0].Trim().ToUpper() == "NAV_LABEL_FONT" || arr[0].Trim().ToUpper() == "BUTTONS_FONT")
                     {
-                        if (arr[1].Trim().Length > 0)
-                        {
-                            font_family = arr[1].Trim();
+                        var a = arr[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                        bool err = false;
+                        string family = "", color = "";
+                        int size = 24, style = 2;
+                        if (a.Length != 4) {
+                            err = true;
+                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: \"Font Family\" size style color, например: \"Arial\" 24 2 #000000");
                         }
-                    }
-                    else if (arr[0].Trim().ToUpper() == "FONT_STYLE")
-                    {
-                        try
-                        {
-                            int style = Convert.ToInt32(arr[1].Trim());
-                            if (style < 0 || style > 8) {
-                                System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FONT_STYLE должно быть от 0 до 8ми");
-                                continue;
-                            }
+                        else {
+                            family = a[0].Replace("\"", "").Trim();
+                            color = a[3].Trim();
 
-                            font_style = style;
-                        }
-                        catch (Exception)
-                        {
-                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FONT_STYLE должно быть от 0 до 8ми");
-                        }
-                    }
-                    else if (arr[0].Trim().ToUpper() == "FONT_SIZE")
-                    {
-                        try
-                        {
-                            int s = Convert.ToInt32(arr[1].Trim());
-                            if (s < 8 || s > 72)
+                            try
                             {
-                                System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FONT_SIZE должно быть от 8 до 72-x");
-                                continue;
+                                size = Convert.ToInt32(a[1].Trim());
+                                if (size < 8 || size > 72) { err = true; }
                             }
+                            catch (Exception) { err = true; }
 
-                            font_size = s;
+                            try
+                            {
+                                style = Convert.ToInt32(a[2].Trim());
+                                if (style < 0 || style > 8) { err = true; }
+                            }
+                            catch (Exception) { err = true; }
+
+                            try
+                            {
+                                Color.FromArgb(Int32.Parse(a[3].Trim().Replace("#", ""), NumberStyles.HexNumber));
+                            }
+                            catch { err = true; }
                         }
-                        catch (Exception)
+
+                        if (err)
                         {
-                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FONT_SIZE должно быть от 8 до 72-x");
+                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: \"Font Family\" size(8..72) style(0..8) color(hex_format), например: \"Arial\" 24 2 #000000");
+                            continue;
                         }
+
+                        if (arr[0].Trim().ToUpper() == "NAV_LABEL_FONT") {
+                            nav_font_family = family;
+                            nav_font_size = size;
+                            nav_font_style = style;
+                            nav_font_color = color;
+                        }
+
+                        if (arr[0].Trim().ToUpper() == "BUTTONS_FONT")
+                        {
+                            btn_font_family = family;
+                            btn_font_size = size;
+                            btn_font_style = style;
+                            btn_font_color = color;
+                        }
+
                     }
                     else if (arr[0].Trim().ToUpper() == "FULL_SCREEN")
                     {

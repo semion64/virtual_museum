@@ -86,10 +86,12 @@ namespace MuseumVR
         protected bool WAIT_ANIMATION = true;
         protected Panel pnl;
         //AxWMPLib.AxWindowsMediaPlayer video_player;
+        VideoPlayer video_player;
         protected Waitning waitning;
         public Drawer(Panel pnl) {
             this.pnl = pnl;
             waitning = new Waitning(pnl, SETTINGS.ANIMATION_TIME);
+            video_player = new VideoPlayer();
             /*  video_player = new AxWMPLib.AxWindowsMediaPlayer();
 
              // System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -137,11 +139,13 @@ namespace MuseumVR
 
         public void StopPlayer()
         {
+            //video_player.Stop();
             /*video_player.Ctlcontrols.stop();*/
         }
 
         private void drawVideo(string path)
         {
+            //video_player.Start(path, pnl);
             /*pnl.Controls.Add(video_player);
             video_player.Visible = true;
             video_player.URL = path;*/
@@ -163,8 +167,8 @@ namespace MuseumVR
         protected override void drawImage(Bitmap bit)
         {
             PictureBox pbx = new PictureBox();
-            pbx.SizeMode = PictureBoxSizeMode.StretchImage;
             pbx.Dock = DockStyle.Fill;
+            pbx.SizeMode = PictureBoxSizeMode.Zoom;
             pbx.Image = bit;
             pnl.Controls.Add((PictureBox)pbx);
         }
@@ -198,7 +202,7 @@ namespace MuseumVR
             StopPlayer();
             PictureBox pbx = new PictureBox();
             pbx.Visible = true;
-            pbx.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbx.SizeMode = PictureBoxSizeMode.Zoom;
             pbx.Dock = DockStyle.Fill;
             pbx.Image = bit;
             panelContent.Controls.Clear();

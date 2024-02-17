@@ -16,7 +16,8 @@ namespace MuseumVR
         {
             lbl_nav = new Label();
             lbl_nav.AutoSize = true;
-            lbl_nav.Font = new Font(SETTINGS.FONT_FAMILY, SETTINGS.FONT_SIZE, (FontStyle)(SETTINGS.FONT_STYLE));
+            lbl_nav.Font = new Font(SETTINGS.NAV_FONT_FAMILY, SETTINGS.NAV_FONT_SIZE, (FontStyle)(SETTINGS.NAV_FONT_STYLE));
+            lbl_nav.ForeColor = SETTINGS.NAV_FONT_COLOR;
             lbl_nav.BackColor = Color.Transparent;
             this.pnl = panel;
         }

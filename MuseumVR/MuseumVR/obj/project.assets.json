@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\KMF\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\MuseumVR.csproj",
+      "projectUniqueName": "C:\\Users\\User\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\MuseumVR.csproj",
       "projectName": "MuseumVR",
-      "projectPath": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\MuseumVR.csproj",
-      "packagesPath": "C:\\Users\\KMF\\.nuget\\packages\\",
-      "outputPath": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\obj\\",
+      "projectPath": "C:\\Users\\User\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\MuseumVR.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KMF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -69,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

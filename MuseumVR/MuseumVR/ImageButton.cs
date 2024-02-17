@@ -46,7 +46,8 @@ namespace MuseumVR
             btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn.MouseDown += (sender, EventArgs) => { btn_MouseDown(sender, EventArgs, btn_name); };
             btn.MouseUp += (sender, EventArgs) => { btn_MouseUp(sender, EventArgs, btn_name); };
-            btn.Font = new Font(SETTINGS.FONT_FAMILY, SETTINGS.FONT_SIZE, (FontStyle)SETTINGS.FONT_STYLE); 
+            btn.Font = new Font(SETTINGS.BTN_FONT_FAMILY, SETTINGS.BTN_FONT_SIZE, (FontStyle)SETTINGS.NAV_FONT_STYLE);
+            btn.ForeColor = SETTINGS.BTN_FONT_COLOR;
             
             return btn;
         }
