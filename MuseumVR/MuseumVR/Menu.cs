@@ -27,18 +27,15 @@ namespace MuseumVR
         public Menu()
         {
             pnl_main = new Panel();
-            int height = 900;
-            pnl_main.Width = (height * 4) / 3 + 32;
-            pnl_main.Height = height;
 
             pnl_main.AutoScroll = true;
             pnl_main.BackColor = Color.Transparent;
             
             pnl_main.Padding = new Padding(8);
 
-            pnl_bottom = new Panel();
-            pnl_bottom.BackgroundImage = Resources.Image(Resources.Pic.BottomPanel);    
+            pnl_bottom = new Panel(); 
             pnl_bottom.Dock = DockStyle.Fill;
+           
             btns = new Dictionary<Buttons, Button>();
 
             btns[Buttons.Back] = ImageButton.Create(Resources.Pic.BtnBack, 0, 0);
@@ -99,23 +96,22 @@ namespace MuseumVR
 
         }
 
-        public void UpdateCoord(int margin, int template_main_width) {
+        public void UpdateCoord(int margin, Panel main, Panel bottom) {
             Button btn_prev = btns[Buttons.Prev];
             Button btn_next = btns[Buttons.Next];
             Button btn_back = btns[Buttons.Back];
-
+            pnl_main.Height = main.Height;
+            pnl_main.Width = (pnl_main.Height * 4) / 3;
+           
             btn_prev.Top = pnl_main.Height / 2 - btn_prev.Height / 2;
             btn_prev.Left = margin;
 
             btn_next.Top = pnl_main.Height / 2 - btn_next.Height / 2;
-            btn_next.Left = template_main_width - margin - btn_next.Width;
+            btn_next.Left = main.Width - margin - btn_next.Width;
 
-            btn_back.Top = pnl_bottom.Height / 2 - btn_back.Height / 2;
-            btn_back.Left = pnl_bottom.Width / 2 - btn_back.Width / 2;
-        }
+            btn_back.Top = bottom.Height / 2 - btn_back.Height / 2;
+            btn_back.Left = bottom.Width / 2 - btn_back.Width / 2;
 
-        public void CenteredPanel(Panel main, Panel bottom)
-        {
             centeredPanel(pnl_main, main);
             centeredPanel(pnl_bottom, bottom);
         }

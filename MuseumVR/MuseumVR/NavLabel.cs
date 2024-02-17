@@ -11,28 +11,30 @@ namespace MuseumVR
     internal class NavLabel
     {
         Label lbl_nav;
-        public NavLabel()
+        Panel pnl;
+        public NavLabel(Panel panel)
         {
             lbl_nav = new Label();
-            lbl_nav.Width = 1700;
-            lbl_nav.Height = 75;
+            lbl_nav.AutoSize = true;
             lbl_nav.Font = new Font(SETTINGS.FONT_FAMILY, SETTINGS.FONT_SIZE, (FontStyle)(SETTINGS.FONT_STYLE));
             lbl_nav.BackColor = Color.Transparent;
+            this.pnl = panel;
         }
 
         public string Text 
         { 
-            set { lbl_nav.Text = value; }
+            set { lbl_nav.Text = value; UpdateCoord();}
         }
         public Label Label
         {
             get { return lbl_nav; }
         }
 
-        public void Centered(Panel pnl)
+        public void UpdateCoord()
         {
+            lbl_nav.Left = pnl.Width / 16;
             lbl_nav.Top = pnl.Height / 2 - lbl_nav.Height / 2;
-            lbl_nav.Left = pnl.Width / 2 - lbl_nav.Width / 2;
+            
         }
 
         

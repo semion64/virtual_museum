@@ -31,10 +31,8 @@ namespace MuseumVR
             this.template_bottom = bottom_panel;
             
             initControls();
-            UpdateCoord();
 
             drawer = SETTINGS.ANIMATION_TIME > 0 ? new DrawerAnimated(menu.MainPanel) : new DrawerSimple(menu.MainPanel);
-
         }
 
         public void Update()
@@ -42,14 +40,7 @@ namespace MuseumVR
             updateMainPanel(currentItem);
             updateBottomPanel(currentItem);
         }
-        public void UpdateCoord()
-        {
-            int margin = 64;
-            menu.UpdateCoord(margin, template_main.Width);
-            navLabel.Centered(template_top);
-            menu.CenteredPanel(template_main, template_bottom);
-        }
-
+        
         private void updateMainPanel(Item item) {
             if (item[0].CountChilds == 0)
             {
@@ -136,7 +127,13 @@ namespace MuseumVR
         }
 
         private void initControls() {
-            template_top.BackgroundImage = Resources.Image(Resources.Pic.TopPanel);
+
+            template_main.BackgroundImage = Resources.Image(Resources.Pic.PanelMain);
+            template_top.BackgroundImage = Resources.Image(Resources.Pic.PanelTop);
+            template_bottom.BackgroundImage = Resources.Image(Resources.Pic.PanelBottom);
+            template_main.BackgroundImageLayout = ImageLayout.Stretch;
+            template_main.BackgroundImageLayout = ImageLayout.Stretch;
+            template_main.BackgroundImageLayout = ImageLayout.Stretch;
 
             this.menu = new Menu();
             menu.SetButtonClickProc(Menu.Buttons.Next, btn_Click_Next);
@@ -145,14 +142,22 @@ namespace MuseumVR
 
             template_main.Controls.Add(menu.GetButton(Menu.Buttons.Next));
             template_main.Controls.Add(menu.GetButton(Menu.Buttons.Prev));
-
             template_main.Controls.Add(menu.MainPanel);
             template_bottom.Controls.Add(menu.BottomPanel);
 
-            navLabel = new NavLabel();
+            navLabel = new NavLabel(template_top);
             template_top.Controls.Add(navLabel.Label);
+        }
+        public void UpdateCoord(int width, int height)
+        {
+            int margin = 64;
+            template_top.Height = Resources.Image(Resources.Pic.PanelTop).Height;
+            template_bottom.Height = Resources.Image(Resources.Pic.PanelBottom).Height;
+            template_main.Height = height - template_top.Height - template_bottom.Height;
 
-            UpdateCoord();
+            menu.UpdateCoord(margin, template_main, template_bottom);
+            drawer.UpdateCoord();
+            navLabel.UpdateCoord();
         }
     }
 }

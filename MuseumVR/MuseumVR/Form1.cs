@@ -16,10 +16,16 @@ namespace MuseumVR
         Map mapper;
         public Form1()
         {
+            this.FormBorderStyle = SETTINGS.FULL_SCREEN ? FormBorderStyle.None : FormBorderStyle.Sizable;
             InitializeComponent();
-            pnlMain.BackgroundImage = Resources.Image(Resources.Pic.MainPanel);
             mapper = new Map(SETTINGS.MUSEUM_DIR);
             navigator = new Navigator(mapper.GetItem(), pnlMain, pnlTop, pnlBottom);
+
+            navigator.UpdateCoord(this.Width, this.Height);
+
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            UpdateStyles();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,12 +35,17 @@ namespace MuseumVR
 
         private void tableLayoutPanel1_Resize(object sender, EventArgs e)
         {
-            navigator.UpdateCoord();
+            navigator.UpdateCoord(this.Width, this.Height);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            navigator.UpdateCoord(this.Width, this.Height);
         }
     }
 }

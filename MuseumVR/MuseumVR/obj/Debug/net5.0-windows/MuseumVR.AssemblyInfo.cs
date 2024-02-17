@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MuseumVR")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3a6d51422e50778d5f7d53e70092e1371e92773")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35bf4bcf028f9ce19019f4628c924684714b07b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("MuseumVR")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MuseumVR")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

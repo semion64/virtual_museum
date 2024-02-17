@@ -12,6 +12,7 @@ namespace MuseumVR
     {
         //static Dictionary<string, Bitmap> btn_bitmap = new Dictionary<string, Bitmap>();
         static bool isInitialized = false;
+        static Button btn;
         static ImageButton()
         {
            /* btn_bitmap["menu"] = Resources.Image(Resources.Pic.BtnMenu);
@@ -34,8 +35,10 @@ namespace MuseumVR
             btn.Dock = dockStyle;
 
             btn.BackgroundImage = Resources.Image(btn_name);
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.BackColor = Color.Transparent;
             btn.Size = Resources.Image(btn_name).Size;
+
             btn.FlatAppearance.BorderSize = 0;
             btn.FlatStyle = FlatStyle.Flat;
             btn.UseVisualStyleBackColor = false;

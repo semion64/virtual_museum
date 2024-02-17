@@ -19,11 +19,11 @@ namespace MuseumVR
             BtnNextHover,
             BtnPrev,
             BtnPrevHover,
-            TopPanel,
-            MainPanel,
-            BottomPanel,
-            WaitPanel,
-            WaitAnim
+            PanelTop,
+            PanelMain,
+            PanelBottom,
+            PanelWait,
+            AnimWait
         }
 
         static bool isInitialized = false;
@@ -32,11 +32,11 @@ namespace MuseumVR
         static Resources() {
             bitmaps = new Dictionary<Pic, Bitmap>();
             string dir = "layout";
-            bitmaps[Pic.TopPanel] = new Bitmap($"{dir}/panels/top.png");
-            bitmaps[Pic.BottomPanel] = new Bitmap($"{dir}/panels/bottom.png");
-            bitmaps[Pic.MainPanel] = new Bitmap($"{dir}/panels/main.png");
-            bitmaps[Pic.WaitPanel] = new Bitmap($"{dir}/panels/wait.png");
-            bitmaps[Pic.WaitAnim] = new Bitmap($"{dir}/panels/wait.gif");
+            bitmaps[Pic.PanelTop] = new Bitmap($"{dir}/panels/top.png");
+            bitmaps[Pic.PanelBottom] = new Bitmap($"{dir}/panels/bottom.png");
+            bitmaps[Pic.PanelMain] = new Bitmap($"{dir}/panels/main.png");
+            bitmaps[Pic.PanelWait] = new Bitmap($"{dir}/panels/wait.png");
+            bitmaps[Pic.AnimWait] = new Bitmap($"{dir}/panels/wait.gif");
             bitmaps[Pic.BtnNext] = new Bitmap($"{dir}/buttons/next.png");
             bitmaps[Pic.BtnNextHover] = new Bitmap($"{dir}/buttons/next_hover.png");
             bitmaps[Pic.BtnBack] = new Bitmap($"{dir}/buttons/back.png");

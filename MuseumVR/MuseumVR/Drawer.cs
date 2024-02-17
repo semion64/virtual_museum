@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,25 +14,28 @@ namespace MuseumVR
     internal class Waitning
     {
         Panel pnl;
-        Timer tmr;
+        Panel pnl_main;
+        System.Windows.Forms.Timer tmr;
         int tick = 0;
         int limit;
+        PictureBox pbx_wait_gif;
         public Waitning(Panel pnl_main, int limit = 5)
         {
+            this.pnl_main = pnl_main;
+            
             pnl = new Panel();
-            pnl.Visible = false;
-            pnl.BackColor = Color.White;
-
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = Resources.Image(Resources.Pic.WaitAnim);
-            pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox.Left = pnl_main.Width / 2 - pictureBox.Width / 2;
-            pictureBox.Top = pnl_main.Height / 2 - pictureBox.Height / 2;
-
             pnl.Dock = DockStyle.Fill;
-            pnl.Controls.Add(pictureBox);
-            pictureBox.Visible = true;
-            tmr = new Timer();
+            pnl.Visible = false;
+            pnl.BackgroundImage = Resources.Image(Resources.Pic.PanelWait);
+            pnl.BackgroundImageLayout = ImageLayout.Stretch;
+
+            pbx_wait_gif = new PictureBox();
+            pbx_wait_gif.Image = Resources.Image(Resources.Pic.AnimWait);
+            pbx_wait_gif.SizeMode = PictureBoxSizeMode.AutoSize;
+           
+            pnl.Controls.Add(pbx_wait_gif);
+            pbx_wait_gif.Visible = true;
+            tmr = new System.Windows.Forms.Timer();
             tmr.Interval = 100;
             tmr.Tick += Tmr_Tick;
             this.limit = limit;
@@ -69,8 +73,13 @@ namespace MuseumVR
 
             return true;
         }
+
+        public void UpdateCoord() {
+            pbx_wait_gif.Left = pnl_main.Width / 2 - pbx_wait_gif.Width / 2;
+            pbx_wait_gif.Top = pnl_main.Height / 2 - pbx_wait_gif.Height / 2;
+        }
     }
-    
+
 
     internal abstract class Drawer
     {
@@ -80,7 +89,7 @@ namespace MuseumVR
         protected Waitning waitning;
         public Drawer(Panel pnl) {
             this.pnl = pnl;
-            waitning = new Waitning(pnl);
+            waitning = new Waitning(pnl, SETTINGS.ANIMATION_TIME);
             /*  video_player = new AxWMPLib.AxWindowsMediaPlayer();
 
              // System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -100,26 +109,26 @@ namespace MuseumVR
 
         public virtual void DrawSlide(Item item) {
             string ext = Path.GetExtension(item.Path);
-            if (ext.ToUpper() == ".JPG" 
-                || ext.ToUpper() == ".JPEG" 
-                || ext.ToUpper() == ".PNG" 
-                || ext.ToUpper() == ".SVG" 
+            if (ext.ToUpper() == ".JPG"
+                || ext.ToUpper() == ".JPEG"
+                || ext.ToUpper() == ".PNG"
+                || ext.ToUpper() == ".SVG"
                 || ext.ToUpper() == ".WEBMP"
                 || ext.ToUpper() == ".BMP"
                 || ext.ToUpper() == ".GIF")
             {
                 drawImage(new Bitmap(item.Path));
             }
-            else if (ext.ToUpper() == ".MPG" 
-                || ext.ToUpper() == ".AVI" 
-                || ext.ToUpper() == ".MPEG" 
-                || ext.ToUpper() == ".MP4" 
-                || ext.ToUpper() == ".MPEG4" 
-                || ext.ToUpper() == ".MOV" 
-                || ext.ToUpper() == ".WMV" 
-                || ext.ToUpper() == ".3GP" 
-                || ext.ToUpper() == ".MP3" 
-                || ext.ToUpper() == ".WMA") 
+            else if (ext.ToUpper() == ".MPG"
+                || ext.ToUpper() == ".AVI"
+                || ext.ToUpper() == ".MPEG"
+                || ext.ToUpper() == ".MP4"
+                || ext.ToUpper() == ".MPEG4"
+                || ext.ToUpper() == ".MOV"
+                || ext.ToUpper() == ".WMV"
+                || ext.ToUpper() == ".3GP"
+                || ext.ToUpper() == ".MP3"
+                || ext.ToUpper() == ".WMA")
             {
                 drawVideo(item.Path);
             }
@@ -139,6 +148,10 @@ namespace MuseumVR
         }
 
         abstract protected void drawImage(Bitmap bit);
+
+        public void UpdateCoord() { 
+            waitning.UpdateCoord();
+        }
     }
 
     internal class DrawerSimple : Drawer
@@ -173,12 +186,14 @@ namespace MuseumVR
         {
             panelContent = new Panel();
             panelContent.Dock = DockStyle.Fill;
+            this.pnl.Controls.Add(waitning.Panel);
         }
 
         protected override void drawImage(Bitmap bit)
         {
             this.pnl.Controls.Add(waitning.Panel);
             waitning.Start();
+
             panelContent.Visible = false;
             StopPlayer();
             PictureBox pbx = new PictureBox();

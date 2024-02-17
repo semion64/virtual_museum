@@ -17,7 +17,7 @@ namespace MuseumVR
         private static string font_family = "Gabriola";
         private static int font_style = 2;
         private static int font_size = 28;
-
+        private static string full_screen = "ON";
         public static int ANIMATION_TIME
         {
             get
@@ -58,6 +58,14 @@ namespace MuseumVR
             }        
         }
 
+        public static bool FULL_SCREEN
+        {
+            get
+            {
+                return full_screen == "ON";
+            }
+        }
+
         static SETTINGS()
         {
             if (!File.Exists("settings.txt")) {
@@ -69,6 +77,7 @@ namespace MuseumVR
                     sw.WriteLine($"FONT_FAMILY = {font_family}");
                     sw.WriteLine($"FONT_STYLE = {font_style}");
                     sw.WriteLine($"FONT_SIZE = {font_size}");
+                    sw.WriteLine($"FULL_SCREEN = {full_screen}");
                 }
             }
             using (StreamReader sr = new StreamReader("settings.txt"))
@@ -149,6 +158,30 @@ namespace MuseumVR
                             }
 
                             font_size = s;
+                        }
+                        catch (Exception)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FONT_SIZE должно быть от 8 до 72-x");
+                        }
+                    }
+                    else if (arr[0].Trim().ToUpper() == "FULL_SCREEN")
+                    {
+                        try
+                        {
+                            var s = arr[1].Trim().ToUpper();
+                            if (s == "ON")
+                            {
+                                full_screen = "ON";
+                            }
+                            else if (s == "OFF")
+                            {
+                                full_screen = "OFF";
+                            }
+                            else 
+                            {
+                                System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение FULL_SCREEN должно принимать значение ON или OFF");
+                                continue;
+                            }
                         }
                         catch (Exception)
                         {
