@@ -35,7 +35,7 @@
             // 
             // pnlBottom
             // 
-            pnlBottom.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+            pnlBottom.BackColor = System.Drawing.Color.Transparent;
             pnlBottom.Dock = System.Windows.Forms.DockStyle.Top;
             pnlBottom.Location = new System.Drawing.Point(0, 312);
             pnlBottom.Margin = new System.Windows.Forms.Padding(0);

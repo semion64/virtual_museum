@@ -16,15 +16,16 @@ namespace MuseumVR
         public static bool isInitialized = false;
 
         private static string museum_dir = "Data";
-        private static int animation_time = 10;
+        private static string theme_dir = "themes/gold";
+        private static int animation_time = 5;
         private static string nav_font_family = "Gabriola";
         private static int nav_font_style = 2;
-        private static int nav_font_size = 28;
+        private static int nav_font_size = 32;
         private static string nav_font_color = "#000000";
 
         private static string btn_font_family = "Gabriola";
         private static int btn_font_style = 2;
-        private static int btn_font_size = 28;
+        private static int btn_font_size = 42;
         private static string btn_font_color = "#000000";
 
         private static string full_screen = "ON";
@@ -109,6 +110,14 @@ namespace MuseumVR
             }        
         }
 
+        public static string THEME_DIR
+        {
+            get
+            {
+                return theme_dir;
+            }
+        }
+
         public static bool FULL_SCREEN
         {
             get
@@ -124,10 +133,11 @@ namespace MuseumVR
                 {
                     
                     sw.WriteLine($"MUSEUM_DIR = {museum_dir}");
+                    sw.WriteLine($"THEME_DIR = {theme_dir}");
                     sw.WriteLine($"ANIMATION_TIME = {animation_time}");
 
-                    sw.WriteLine($"NAV_LABEL_FONT = \"{nav_font_family}\" {nav_font_size} {nav_font_style} {nav_font_color}");
-                    sw.WriteLine($"BUTTONS_FONT = \"{btn_font_family}\" {btn_font_size} {btn_font_style} {btn_font_color}");
+                    sw.WriteLine($"NAV_LABEL_FONT = {nav_font_family} {nav_font_size} {nav_font_style} {nav_font_color}");
+                    sw.WriteLine($"BUTTONS_FONT = {btn_font_family} {btn_font_size} {btn_font_style} {btn_font_color}");
 
                     sw.WriteLine($"FULL_SCREEN = {full_screen}");
                 }
@@ -154,7 +164,24 @@ namespace MuseumVR
                         }
                         catch (Exception)
                         {
-                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение ANIMATION_TIME  должно быть от 0 до 100");
+                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt.  Значение MUSEUM_DIR ссылается на несуществующую директорию. ");
+                        }
+                    }
+                    else if (arr[0].Trim().ToUpper() == "THEME_DIR")
+                    {
+                        try
+                        {
+                            if (!Directory.Exists(arr[1].Trim()))
+                            {
+                                System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt. Значение THEME_DIR ссылается на несуществующую директорию. Проверьте правильность директории или укажите полный путь. Если имеются, то удалите пробелы в конце и в начале названия директории.");
+                                continue;
+                            }
+
+                            theme_dir = arr[1].Trim();
+                        }
+                        catch (Exception)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Ошибка в файле setting.txt.  Значение THEME_DIR ссылается на несуществующую директорию. ");
                         }
                     }
                     else if (arr[0].Trim().ToUpper() == "ANIMATION_TIME")
@@ -182,10 +209,10 @@ namespace MuseumVR
                         int size = 24, style = 2;
                         if (a.Length != 4) {
                             err = true;
-                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: \"Font Family\" size style color, например: \"Arial\" 24 2 #000000");
+                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: Font_Family size style color, например: \"Arial\" 24 2 #000000");
                         }
                         else {
-                            family = a[0].Replace("\"", "").Trim();
+                            family = a[0].Replace("_", " ").Replace("\"", "").Trim();
                             color = a[3].Trim();
 
                             try
@@ -211,7 +238,7 @@ namespace MuseumVR
 
                         if (err)
                         {
-                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: \"Font Family\" size(8..72) style(0..8) color(hex_format), например: \"Arial\" 24 2 #000000");
+                            MessageBox.Show("Ошибка в файле setting.txt. Значение FONT должно быть указано в формате: Font_Family size(8..72) style(0..8) color(hex_format), например: \"Arial\" 24 2 #000000");
                             continue;
                         }
 

@@ -31,7 +31,7 @@ namespace MuseumVR
 
         static Resources() {
             bitmaps = new Dictionary<Pic, Bitmap>();
-            string dir = "layout";
+            string dir = SETTINGS.THEME_DIR;
             bitmaps[Pic.PanelTop] = new Bitmap($"{dir}/panels/top.png");
             bitmaps[Pic.PanelBottom] = new Bitmap($"{dir}/panels/bottom.png");
             bitmaps[Pic.PanelMain] = new Bitmap($"{dir}/panels/main.png");

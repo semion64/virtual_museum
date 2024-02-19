@@ -85,28 +85,12 @@ namespace MuseumVR
     {
         protected bool WAIT_ANIMATION = true;
         protected Panel pnl;
-        //AxWMPLib.AxWindowsMediaPlayer video_player;
         VideoPlayer video_player;
         protected Waitning waitning;
         public Drawer(Panel pnl) {
             this.pnl = pnl;
             waitning = new Waitning(pnl, SETTINGS.ANIMATION_TIME);
-            video_player = new VideoPlayer();
-            /*  video_player = new AxWMPLib.AxWindowsMediaPlayer();
-
-             // System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-
-               ((System.ComponentModel.ISupportInitialize)video_player).BeginInit();
-              video_player.Enabled = true;
-              video_player.Location = new System.Drawing.Point(515, 63);
-              video_player.Name = "axWindowsMediaPlayer";
-              //axWindowsMediaPlayer.OcxState = (System.Windows.Forms.AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
-              //axWindowsMediaPlayer.Size = new System.Drawing.Size(302, 276);
-              video_player.TabIndex = 1;
-              //axWindowsMediaPlayer.CreateControl();
-              video_player.Dock = DockStyle.Fill;
-              ((System.ComponentModel.ISupportInitialize)video_player).EndInit();*/
-
+            video_player = new VideoPlayer(this.pnl);
         }
 
         public virtual void DrawSlide(Item item) {
@@ -139,16 +123,13 @@ namespace MuseumVR
 
         public void StopPlayer()
         {
-            //video_player.Stop();
-            /*video_player.Ctlcontrols.stop();*/
+            video_player.Stop();
         }
 
         private void drawVideo(string path)
         {
-            //video_player.Start(path, pnl);
-            /*pnl.Controls.Add(video_player);
-            video_player.Visible = true;
-            video_player.URL = path;*/
+            pnl.Controls.Clear();
+            video_player.Start(path);
         }
 
         abstract protected void drawImage(Bitmap bit);
