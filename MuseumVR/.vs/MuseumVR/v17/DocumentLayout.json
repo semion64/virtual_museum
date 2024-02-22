@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\git_repos\\virtual_museum\\MuseumVR\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -42,10 +50,6 @@
       "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -56,10 +60,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|solutionrelative:museumvr\\slider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{720D358B-0CBE-46F9-A472-328E39DC4CDE}|MuseumVR\\MuseumVR.csproj|c:\\git_repos\\virtual_museum\\museumvr\\museumvr\\navlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,11 +77,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Resources.resx",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "MuseumVR\\Properties\\Resources.resx",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Form1.Designer.cs",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Drawer.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Drawer.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Drawer.cs",
@@ -120,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
               "Title": "Slider.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Slider.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Slider.cs",
@@ -133,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Map.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Map.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Map.cs",
@@ -141,12 +141,11 @@
               "RelativeToolTip": "MuseumVR\\Map.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAADwvy4AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T04:47:55.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-14T04:47:55.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Navigator.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Navigator.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Navigator.cs",
@@ -159,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Item.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Item.cs",
@@ -167,12 +166,11 @@
               "RelativeToolTip": "MuseumVR\\Item.cs",
               "ViewState": "AQIAAGoAAAAAAAAAAAArwHcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T04:47:55.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-14T04:47:55.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Form1.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Form1.cs",
@@ -185,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Form1.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Form1.cs",
@@ -197,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SETTINGS.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\SETTINGS.cs",
               "RelativeDocumentMoniker": "MuseumVR\\SETTINGS.cs",
@@ -210,20 +208,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Menu.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Menu.cs",
               "ToolTip": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Menu.cs",
               "RelativeToolTip": "MuseumVR\\Menu.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAjwCQAAAAtAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-17T07:14:26.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Resources.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\Resources.cs",
               "RelativeDocumentMoniker": "MuseumVR\\Resources.cs",
@@ -236,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -249,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "VideoPlayer.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\VideoPlayer.cs",
               "RelativeDocumentMoniker": "MuseumVR\\VideoPlayer.cs",
@@ -262,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ImageButton.cs",
               "DocumentMoniker": "C:\\git_repos\\virtual_museum\\MuseumVR\\MuseumVR\\ImageButton.cs",
               "RelativeDocumentMoniker": "MuseumVR\\ImageButton.cs",
@@ -270,8 +268,7 @@
               "RelativeToolTip": "MuseumVR\\ImageButton.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAApwCQAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-17T07:28:18.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-17T07:28:18.106Z"
             },
             {
               "$type": "Document",
@@ -283,8 +280,7 @@
               "RelativeToolTip": "MuseumVR\\NavLabel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwCIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-17T08:37:44.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-17T08:37:44.5Z"
             },
             {
               "$type": "Document",
@@ -296,8 +292,7 @@
               "RelativeToolTip": "MuseumVR\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAUwBMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-17T07:52:07.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-17T07:52:07.871Z"
             }
           ]
         }

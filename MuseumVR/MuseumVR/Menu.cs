@@ -28,7 +28,6 @@ namespace MuseumVR
         {
             pnl_main = new Panel();
 
-            pnl_main.AutoScroll = true;
             pnl_main.BackColor = Color.Transparent;
             
             pnl_main.Padding = new Padding(8);
@@ -75,6 +74,7 @@ namespace MuseumVR
 
         public List<Button> Update(Item item, BtnMenuClickDelegate btn_click)
         {
+            pnl_main.AutoScroll = false ;
             List<Button> buttons = new List<Button>();
             pnl_main.Controls.Clear();
             SetButtonVisibility(Menu.Buttons.Prev, false);
@@ -91,7 +91,7 @@ namespace MuseumVR
                 top = btn.Bottom + 8;
                 buttons.Add(btn);
             }
-
+            pnl_main.AutoScroll = true;
             return buttons;
 
         }
